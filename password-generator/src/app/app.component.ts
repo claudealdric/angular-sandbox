@@ -13,6 +13,8 @@ export class AppComponent {
 
   onButtonClick() {
     this.password = 'testpassword';
+    const { useLetters, useNumbers, useSymbols } = this;
+    console.table({ useLetters, useNumbers, useSymbols });
   }
 
   onChangeUseLetters() {
