@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  passwordLength = 0;
-  useLowercaseLetters = false;
-  useUppercaseLetters = false;
-  useNumbers = false;
+  passwordLength = 12;
+  useLowercaseLetters = true;
+  useUppercaseLetters = true;
+  useNumbers = true;
   useSymbols = false;
   password = '';
 
@@ -76,7 +76,17 @@ export class AppComponent {
     this.password = generatedPassword.join('');
 
     // // Logging purposes
-    // const { passwordLength, useLowercaseLetters, useNumbers, useSymbols } = this;
-    // console.table({ passwordLength, useLowercaseLetters, useNumbers, useSymbols });
+    // const {
+    //   passwordLength,
+    //   useLowercaseLetters,
+    //   useNumbers,
+    //   useSymbols,
+    // } = this;
+    // console.table({
+    //   passwordLength,
+    //   useLowercaseLetters,
+    //   useNumbers,
+    //   useSymbols,
+    // });
   }
 }
