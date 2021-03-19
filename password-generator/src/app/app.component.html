@@ -7,17 +7,32 @@
 
 <div>
   <label for="use-letters">Use letters</label>
-  <input type="checkbox" id="use-letters" name="use-letters" />
+  <input
+    type="checkbox"
+    id="use-letters"
+    name="use-letters"
+    (change)="onChangeUseLetters()"
+  />
 </div>
 
 <div>
   <label for="use-numbers">Use numbers</label>
-  <input type="checkbox" id="use-numbers" name="use-numbers" />
+  <input
+    type="checkbox"
+    id="use-numbers"
+    name="use-numbers"
+    (change)="onChangeUseNumbers()"
+  />
 </div>
 
 <div>
   <label for="use-symbols">Use symbols</label>
-  <input type="checkbox" id="use-symbols" name="use-symbols" />
+  <input
+    type="checkbox"
+    id="use-symbols"
+    name="use-symbols"
+    (change)="onChangeUseSymbols()"
+  />
 </div>
 
 <div>
