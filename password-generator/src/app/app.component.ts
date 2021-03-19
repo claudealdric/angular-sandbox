@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  passwordLength = 0;
   useLetters = false;
   useNumbers = false;
   useSymbols = false;
@@ -25,7 +26,7 @@ export class AppComponent {
 
   onButtonClick() {
     this.password = 'testpassword';
-    const { useLetters, useNumbers, useSymbols } = this;
-    console.table({ useLetters, useNumbers, useSymbols });
+    const { passwordLength, useLetters, useNumbers, useSymbols } = this;
+    console.table({ passwordLength, useLetters, useNumbers, useSymbols });
   }
 }
