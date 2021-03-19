@@ -18,6 +18,7 @@
     type="checkbox"
     id="use-lowercase-letters"
     name="use-lowercase-letters"
+    [checked]="useLowercaseLetters"
     (change)="onChangeUseLowercaseLetters()"
   />
 </div>
@@ -28,6 +29,7 @@
     type="checkbox"
     id="use-uppercase-letters"
     name="use-uppercase-letters"
+    [checked]="useUppercaseLetters"
     (change)="onChangeUseUppercaseLetters()"
   />
 </div>
@@ -38,6 +40,7 @@
     type="checkbox"
     id="use-numbers"
     name="use-numbers"
+    [checked]="useNumbers"
     (change)="onChangeUseNumbers()"
   />
 </div>
