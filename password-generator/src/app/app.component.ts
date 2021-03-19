@@ -11,22 +11,42 @@ export class AppComponent {
   useUppercaseLetters = true;
   useNumbers = true;
   useSymbols = false;
+  isButtonDisabled = false;
   password = '';
 
   onChangeUseLowercaseLetters() {
     this.useLowercaseLetters = !this.useLowercaseLetters;
+    this.checkButtonDisable();
   }
 
   onChangeUseUppercaseLetters() {
     this.useUppercaseLetters = !this.useUppercaseLetters;
+    this.checkButtonDisable();
   }
 
   onChangeUseNumbers() {
     this.useNumbers = !this.useNumbers;
+    this.checkButtonDisable();
   }
 
   onChangeUseSymbols() {
     this.useSymbols = !this.useSymbols;
+    this.checkButtonDisable();
+  }
+
+  checkButtonDisable() {
+    const {
+      passwordLength,
+      useLowercaseLetters,
+      useUppercaseLetters,
+      useNumbers,
+      useSymbols,
+    } = this;
+    const passwordHasLength = passwordLength > 0;
+    const atLeastOneCheckboxIsChecked =
+      useLowercaseLetters || useUppercaseLetters || useNumbers || useSymbols;
+
+    this.isButtonDisabled = !(passwordHasLength && atLeastOneCheckboxIsChecked);
   }
 
   onButtonClick() {
