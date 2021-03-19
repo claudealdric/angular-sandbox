@@ -8,12 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   passwordLength = 0;
   useLowercaseLetters = false;
+  useUppercaseLetters = false;
   useNumbers = false;
   useSymbols = false;
   password = '';
 
   onChangeUseLowercaseLetters() {
     this.useLowercaseLetters = !this.useLowercaseLetters;
+  }
+
+  onChangeUseUppercaseLetters() {
+    this.useUppercaseLetters = !this.useUppercaseLetters;
   }
 
   onChangeUseNumbers() {
@@ -27,11 +32,21 @@ export class AppComponent {
   onButtonClick() {
     const allowedCharacters: string[] = [];
 
-    if (this.useLowercaseLetters) {
-      // Add alphabetical characters to allowed characters
+    {
       const letters = 'abcdefghijklmnopqrstuvwxyz';
-      for (const letter of letters) {
-        allowedCharacters.push(letter);
+
+      if (this.useLowercaseLetters) {
+        // Add lowercase alphabetical characters to allowed characters
+        for (const letter of letters) {
+          allowedCharacters.push(letter);
+        }
+      }
+
+      if (this.useUppercaseLetters) {
+        // Add uppercase alphabetical characters to allowed characters
+        for (const letter of letters.toUpperCase()) {
+          allowedCharacters.push(letter);
+        }
       }
     }
 
