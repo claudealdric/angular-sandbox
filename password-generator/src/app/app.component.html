@@ -1,73 +1,64 @@
 <h1>Password Generator</h1>
 
-<div>
-  <label for="password-length">Enter Length</label>
-  <input
-    type="number"
-    id="password-length"
-    min="0"
-    max="128"
-    step="1"
-    [(ngModel)]="passwordLength"
-    (change)="checkButtonDisable()"
-  />
-</div>
+<form [formGroup]="passwordForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="password-length">Enter Length</label>
+    <input
+      type="number"
+      id="password-length"
+      min="0"
+      max="128"
+      step="1"
+      formControlName="passwordLength"
+    />
+  </div>
 
-<div>
-  <label for="use-lowercase-letters">Use lowercase letters</label>
-  <input
-    type="checkbox"
-    id="use-lowercase-letters"
-    name="use-lowercase-letters"
-    [checked]="useLowercaseLetters"
-    (change)="onChangeUseLowercaseLetters()"
-  />
-</div>
+  <div>
+    <label for="use-lowercase-letters">Use lowercase letters</label>
+    <input
+      type="checkbox"
+      id="use-lowercase-letters"
+      name="use-lowercase-letters"
+      formControlName="useLowercaseLetters"
+    />
+  </div>
 
-<div>
-  <label for="use-uppercase-letters">Use uppercase letters</label>
-  <input
-    type="checkbox"
-    id="use-uppercase-letters"
-    name="use-uppercase-letters"
-    [checked]="useUppercaseLetters"
-    (change)="onChangeUseUppercaseLetters()"
-  />
-</div>
+  <div>
+    <label for="use-uppercase-letters">Use uppercase letters</label>
+    <input
+      type="checkbox"
+      id="use-uppercase-letters"
+      name="use-uppercase-letters"
+      formControlName="useUppercaseLetters"
+    />
+  </div>
 
-<div>
-  <label for="use-numbers">Use numbers</label>
-  <input
-    type="checkbox"
-    id="use-numbers"
-    name="use-numbers"
-    [checked]="useNumbers"
-    (change)="onChangeUseNumbers()"
-  />
-</div>
+  <div>
+    <label for="use-numbers">Use numbers</label>
+    <input
+      type="checkbox"
+      id="use-numbers"
+      name="use-numbers"
+      formControlName="useNumbers"
+    />
+  </div>
 
-<div>
-  <label for="use-symbols">Use symbols</label>
-  <input
-    type="checkbox"
-    id="use-symbols"
-    name="use-symbols"
-    (change)="onChangeUseSymbols()"
-  />
-</div>
+  <div>
+    <label for="use-symbols">Use symbols</label>
+    <input
+      type="checkbox"
+      id="use-symbols"
+      name="use-symbols"
+      formControlName="useSymbols"
+    />
+  </div>
 
-<div>
-  <button
-    type="button"
-    id="generate-password"
-    (click)="onButtonClick()"
-    [disabled]="isButtonDisabled"
-  >
-    Generate!
-  </button>
-</div>
+  <div>
+    <button type="submit" id="generate-password">Generate!</button>
+  </div>
 
-<div>
-  <label for="password">Your Password</label>
-  <input type="text" id="password" name="password" [value]="password" />
-</div>
+  <div>
+    <label for="password">Your Password</label>
+    <input type="text" id="password" name="password" [value]="password" />
+  </div>
+</form>
