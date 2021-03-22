@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { isIntegerValidator } from 'src/shared/is-integer.directive';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,12 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AppComponent {
   passwordForm = new FormGroup({
-    passwordLength: new FormControl(12),
+    passwordLength: new FormControl(12, [
+      Validators.required,
+      Validators.min(1),
+      Validators.max(128),
+      isIntegerValidator(),
+    ]),
     useLowercaseLetters: new FormControl(true),
     useUppercaseLetters: new FormControl(true),
     useNumbers: new FormControl(true),
