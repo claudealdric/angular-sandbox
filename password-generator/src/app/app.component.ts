@@ -11,30 +11,9 @@ export class AppComponent {
   useUppercaseLetters = true;
   useNumbers = true;
   useSymbols = false;
-  isButtonDisabled = false;
   password = '';
 
-  onChangeUseLowercaseLetters() {
-    this.useLowercaseLetters = !this.useLowercaseLetters;
-    this.checkButtonDisable();
-  }
-
-  onChangeUseUppercaseLetters() {
-    this.useUppercaseLetters = !this.useUppercaseLetters;
-    this.checkButtonDisable();
-  }
-
-  onChangeUseNumbers() {
-    this.useNumbers = !this.useNumbers;
-    this.checkButtonDisable();
-  }
-
-  onChangeUseSymbols() {
-    this.useSymbols = !this.useSymbols;
-    this.checkButtonDisable();
-  }
-
-  checkButtonDisable() {
+  buttonIsDisabled() {
     const {
       passwordLength,
       useLowercaseLetters,
@@ -42,11 +21,27 @@ export class AppComponent {
       useNumbers,
       useSymbols,
     } = this;
-    const passwordHasLength = passwordLength > 0;
-    const atLeastOneCheckboxIsChecked =
-      useLowercaseLetters || useUppercaseLetters || useNumbers || useSymbols;
+    return !(
+      passwordLength > 0 &&
+      Number.isInteger(passwordLength) &&
+      (useLowercaseLetters || useUppercaseLetters || useNumbers || useSymbols)
+    );
+  }
 
-    this.isButtonDisabled = !(passwordHasLength && atLeastOneCheckboxIsChecked);
+  onChangeUseLowercaseLetters() {
+    this.useLowercaseLetters = !this.useLowercaseLetters;
+  }
+
+  onChangeUseUppercaseLetters() {
+    this.useUppercaseLetters = !this.useUppercaseLetters;
+  }
+
+  onChangeUseNumbers() {
+    this.useNumbers = !this.useNumbers;
+  }
+
+  onChangeUseSymbols() {
+    this.useSymbols = !this.useSymbols;
   }
 
   onButtonClick() {
@@ -94,19 +89,5 @@ export class AppComponent {
     }
 
     this.password = generatedPassword.join('');
-
-    // // Logging purposes
-    // const {
-    //   passwordLength,
-    //   useLowercaseLetters,
-    //   useNumbers,
-    //   useSymbols,
-    // } = this;
-    // console.table({
-    //   passwordLength,
-    //   useLowercaseLetters,
-    //   useNumbers,
-    //   useSymbols,
-    // });
   }
 }

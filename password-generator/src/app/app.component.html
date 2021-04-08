@@ -5,11 +5,10 @@
   <input
     type="number"
     id="password-length"
-    min="0"
+    min="1"
     max="128"
     step="1"
     [(ngModel)]="passwordLength"
-    (change)="checkButtonDisable()"
   />
 </div>
 
@@ -61,7 +60,7 @@
     type="button"
     id="generate-password"
     (click)="onButtonClick()"
-    [disabled]="isButtonDisabled"
+    [disabled]="buttonIsDisabled()"
   >
     Generate!
   </button>
