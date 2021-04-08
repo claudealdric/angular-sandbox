@@ -1,6 +1,6 @@
-export interface Card {
+export interface Post {
   title: string
-  subtitle: string
+  username: string
   imgSrc: string
   content: string
 }
