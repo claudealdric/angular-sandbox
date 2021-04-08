@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 
 import { Post } from './post.interface'
 
@@ -8,12 +8,7 @@ import { Post } from './post.interface'
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
-  post: Post = {
-    title: 'Neat Tree',
-    username: '@nature',
-    imageUrl: 'assets/tree.jpeg',
-    content: 'Saw this awesome tree during my hike today',
-  }
+  @Input() post!: Post
 
   constructor() {}
 
