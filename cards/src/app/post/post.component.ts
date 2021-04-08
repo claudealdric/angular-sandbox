@@ -8,7 +8,7 @@ import { Post } from './post.interface'
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
-  card: Post = {
+  post: Post = {
     title: 'Neat Tree',
     username: '@nature',
     imageUrl: 'assets/tree.jpeg',
