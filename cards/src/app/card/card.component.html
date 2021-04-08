@@ -1,14 +1,14 @@
 <div class="card">
   <div class="card-image">
     <figure class="image is-4by3">
-      <img src="assets/tree.jpeg" alt="A tree" />
+      <img [src]="card.imgSrc" alt="" />
     </figure>
   </div>
   <div class="card-content">
     <div class="media-content">
-      <p class="title is-4">Neat Tree</p>
-      <p class="subtitle is-6">@nature</p>
+      <p class="title is-4">{{ card.title }}</p>
+      <p class="subtitle is-6">{{ card.subtitle }}</p>
     </div>
-    <div class="content">Saw this awesome tree during my hike today.</div>
+    <div class="content">{{ card.content }}</div>
   </div>
 </div>
