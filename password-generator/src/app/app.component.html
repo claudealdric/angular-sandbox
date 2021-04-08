@@ -1,72 +1,100 @@
-<h1>Password Generator</h1>
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Password Generator</h1>
 
-<div>
-  <label for="password-length">Enter Length</label>
-  <input
-    type="number"
-    id="password-length"
-    min="1"
-    max="128"
-    step="1"
-    [(ngModel)]="passwordLength"
-  />
-</div>
+      <div class="field">
+        <label for="password-length">Length</label>
+        <input
+          class="input"
+          type="number"
+          id="password-length"
+          min="1"
+          max="128"
+          step="1"
+          [(ngModel)]="passwordLength"
+        />
+      </div>
 
-<div>
-  <label for="use-lowercase-letters">Use lowercase letters</label>
-  <input
-    type="checkbox"
-    id="use-lowercase-letters"
-    name="use-lowercase-letters"
-    [checked]="useLowercaseLetters"
-    (change)="onChangeUseLowercaseLetters()"
-  />
-</div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox" for="use-lowercase-letters">
+            <input
+              type="checkbox"
+              id="use-lowercase-letters"
+              name="use-lowercase-letters"
+              [checked]="useLowercaseLetters"
+              (change)="onChangeUseLowercaseLetters()"
+            />
+            Use lowercase letters
+          </label>
+        </div>
+      </div>
 
-<div>
-  <label for="use-uppercase-letters">Use uppercase letters</label>
-  <input
-    type="checkbox"
-    id="use-uppercase-letters"
-    name="use-uppercase-letters"
-    [checked]="useUppercaseLetters"
-    (change)="onChangeUseUppercaseLetters()"
-  />
-</div>
+      <div class="field">
+        <div class="control">
+          <label for="use-uppercase-letters">
+            <input
+              type="checkbox"
+              id="use-uppercase-letters"
+              name="use-uppercase-letters"
+              [checked]="useUppercaseLetters"
+              (change)="onChangeUseUppercaseLetters()"
+            />
+            Use uppercase letters
+          </label>
+        </div>
+      </div>
 
-<div>
-  <label for="use-numbers">Use numbers</label>
-  <input
-    type="checkbox"
-    id="use-numbers"
-    name="use-numbers"
-    [checked]="useNumbers"
-    (change)="onChangeUseNumbers()"
-  />
-</div>
+      <div class="field">
+        <div class="control">
+          <label for="use-numbers">
+            <input
+              type="checkbox"
+              id="use-numbers"
+              name="use-numbers"
+              [checked]="useNumbers"
+              (change)="onChangeUseNumbers()"
+            />
+            Use numbers
+          </label>
+        </div>
+      </div>
 
-<div>
-  <label for="use-symbols">Use symbols</label>
-  <input
-    type="checkbox"
-    id="use-symbols"
-    name="use-symbols"
-    (change)="onChangeUseSymbols()"
-  />
-</div>
+      <div class="field">
+        <div class="control">
+          <label for="use-symbols">
+            <input
+              type="checkbox"
+              id="use-symbols"
+              name="use-symbols"
+              (change)="onChangeUseSymbols()"
+            />
+            Use symbols
+          </label>
+        </div>
+      </div>
 
-<div>
-  <button
-    type="button"
-    id="generate-password"
-    (click)="onButtonClick()"
-    [disabled]="buttonIsDisabled()"
-  >
-    Generate!
-  </button>
-</div>
+      <button
+        class="button is-link is-fullwidth"
+        type="button"
+        id="generate-password"
+        (click)="onButtonClick()"
+        [disabled]="buttonIsDisabled()"
+      >
+        Generate!
+      </button>
 
-<div>
-  <label for="password">Your Password</label>
-  <input type="text" id="password" name="password" [value]="password" />
+      <div class="box">
+        <label for="password">Your Password</label>
+        <input
+          class="input"
+          type="text"
+          id="password"
+          name="password"
+          [value]="password"
+        />
+      </div>
+    </div>
+  </div>
 </div>
