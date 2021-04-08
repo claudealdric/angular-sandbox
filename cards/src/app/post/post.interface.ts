@@ -1,6 +1,6 @@
 export interface Post {
   title: string
   username: string
-  imgSrc: string
+  imageUrl: string
   content: string
 }

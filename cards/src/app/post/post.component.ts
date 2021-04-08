@@ -11,7 +11,7 @@ export class PostComponent implements OnInit {
   card: Post = {
     title: 'Neat Tree',
     username: '@nature',
-    imgSrc: 'assets/tree.jpeg',
+    imageUrl: 'assets/tree.jpeg',
     content: 'Saw this awesome tree during my hike today',
   }
 
