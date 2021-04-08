@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core'
 
-import { Card } from './card.interface'
+import { Post } from './post.interface'
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css'],
+  selector: 'app-post',
+  templateUrl: './post.component.html',
+  styleUrls: ['./post.component.css'],
 })
-export class CardComponent implements OnInit {
-  card: Card = {
+export class PostComponent implements OnInit {
+  card: Post = {
     title: 'Neat Tree',
-    subtitle: '@nature',
+    username: '@nature',
     imgSrc: 'assets/tree.jpeg',
     content: 'Saw this awesome tree during my hike today',
   }
